@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
         url = "http://www.ishadowsocks.com/";
 
     Downloader *myDownLoader = new Downloader;
-    myDownLoader->setURL(url);
-    myDownLoader->startDownload();
+    myDownLoader->startDownload(url);
     QEventLoop loop;
     QObject::connect(myDownLoader,SIGNAL(finished()),&loop,SLOT(quit()));
     loop.exec();
@@ -53,7 +52,8 @@ int main(int argc, char *argv[])
                 qDebug()<<pos<<exp.capturedTexts();
             }
             QFile new_config(filePath);
-            new_config.open(QFile::ReadWrite);
+//            new_config.remove();
+            new_config.open(QFile::WriteOnly);
             new_config.write(text_config.toLocal8Bit());
             new_config.close();
             qDebug()<<text_config;

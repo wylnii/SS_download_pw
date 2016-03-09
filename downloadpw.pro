@@ -3,7 +3,7 @@ QT -= gui
 
 CONFIG += c++11
 
-TARGET = downloadpw
+TARGET = download_password
 CONFIG += console
 CONFIG -= app_bundle
 
@@ -14,3 +14,7 @@ SOURCES += main.cpp \
 
 HEADERS += \
     downloader.h
+
+#RC_FILE += \
+#    my.rc
+RC_ICONS = myico.ico

@@ -63,7 +63,7 @@ void Downloader::startDownload(const QString &url)
 
         fileName = info.fileName();
         if(fileName.isEmpty())
-            fileName = "test.html";
+            fileName = "index.html";
 
         file->setFileName(fileName);
         URL = url;
